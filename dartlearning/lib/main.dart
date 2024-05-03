@@ -10,12 +10,12 @@ return "$firstName $lastName";//second way
 String printMyName(){
   return "";
 }
-// todo
+// todo 1), 2 , 3 , 4, 5, 6, 7, 8, 9,10,11 and 12 
 // String getFullName(String firstName, String lastName) => return "$firstName $lastName";//second form of function for short instructions
 
 void test(){
   //if conditional
-  final name = "bar";
+  const name = "bar";
   if(name == "foo"){
     print("Yes,it's foo");
   }else if(name == "bar"){
@@ -23,6 +23,66 @@ void test(){
   }else{
     print("No,it's not foo or bar");
   }
+  //simple operators + - * and /
+  var age = 20;
+  final halfOfAge = age/2;
+  final doubleAge = age *2;
+  final ageMinusOne = --age;//prefix operator -- make sure that age is subtract one first
+  final nameTimes5 = name * 5;
+  print(halfOfAge + " " + doubleAge + nameTimes5);//1) test if works
+  //list
+  var names = ["Foo","Bar","Baz"];
+  final foo = name[0];
+  final length = name.length;
+  print(foo + length);//2) test if works
+  names.add("My name");
+  print(name.length);//3) test if works
+  //sets
+  var names2= {"foo","bar","baz","foo"};
+  names2.add("foo");
+  names2.add("bar");
+  names2.add("baz");
+  const things = {"foo",1};
+  print(things);//5) personal expriment,test if works
+  print(names2)//4) test that nothing repeat
+  //maps
+  const person = {
+    "age":20,
+    "name":"foo",
+    };
+  print(person);//6) Test if works
+  person["name"] = "Foooo";
+  print(person);//7) Test if changes
+  person["lastname"] = "baz";
+  print(person);//8) Test if changes
+
+  //null
+  const String? name3 = null;// the "?" make it possible to have null
+  print(name3);//9) Test if works
+  name = "foo";
+  print(name3);//10) Test if works
+  list<String?>? names4 = ["foo","bar"];// make posible that the variables are null and that the list is absent
+  //cherry picking non-null values
+  const String? firstName2 = null;
+  const String? lastName2 = "bar";
+  const String? middleName = "baz";
+  if(firstName2 != null){//11) prove the first way to get the not null value
+    print("First name is the first non-null value");
+  } else if(middleName != null ){
+    print("Middle name is the first non-null value");
+  } else if(lastName2 != null){
+    print("Last name is the first non-null value");
+  }
+
+  const firstNonNullValue = firstName2 ?? middleName ?? lastName2;
+  //null awaere assignment operator "??="
+  String? nameT = firstName2;
+  nameT??= middleName;//if  nameT is nulll it take middle name value
+  nameT ??= lastName2;
+  print(nameT);//12)prove that this works
+
+
+
 }
 
 void main() {
